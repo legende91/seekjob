@@ -42,6 +42,9 @@ class OffresController extends AbstractActionController {
 	 * @return \Zend\View\Model\ViewModel
 	 */
 	public function detailAction() {
+	//TODO trouver comment utilizer plutot les forms de ZEND	
+	//$form = new \Offres\Form\CandidatureForm();
+		
 		$g = new OffreGateway();
 
 		$id = $this->params("id");
@@ -50,7 +53,7 @@ class OffresController extends AbstractActionController {
 		$offreDetail = $g->selectOffreById($id);
 //		var_dump($offreDetail);
 //		die();
-		return new ViewModel(array('offre' => $offreDetail,'userID'=> 1));
+		return new ViewModel(array('offre' => $offreDetail, 'userID' => 1,'form' => $form));
 	}
 
 	//TODO Creer formulaire d'inscription

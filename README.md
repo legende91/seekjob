@@ -1,77 +1,129 @@
-ZendSkeletonApplication
-=======================
+#TP Création d’un site d’offres d’emploi
 
-Introduction
-------------
-This is a simple, skeleton application using the ZF2 MVC layer and module
-systems. This application is meant to be used as a starting place for those
-looking to get their feet wet with ZF2.
+*L’objectif de ce TP est de créer un site permettant la publication, la visualisation et la réponse à des offres d’emplois.
+Vous pouvez vous inspirer du site Remix Jobs http://remixjobs.com/ pour la navigation.*
 
-Installation
-------------
+Placez-vous dans le contexte de l’examen final ou vous serez jugés sur les activités et compétences suivantes :
 
-Using Composer (recommended)
-----------------------------
-The recommended way to get a working copy of this project is to clone the repository
-and use `composer` to install dependencies using the `create-project` command:
+##Pour les développeurs de logiciels :
 
-    curl -s https://getcomposer.org/installer | php --
-    php composer.phar create-project -sdev --repository-url="https://packages.zendframework.com" zendframework/skeleton-application path/to/install
+* Développer une application client-serveur (au moins 2 compétences parmi les suivantes)
+* Développer une interface utilisateur
+* Maquetter une application
+* Mettre en place une base de données
+* Concevoir une base de données
+* Développer des composants d'accès aux données
+* Développer une application web (anglais + appli web, appli mobile ou CMS)
+* Développer des pages web en lien avec une base de données 
+* Utiliser l’anglais dans son activité professionnelle en informatique
+* Développer une application simple de mobilité numérique
+* Mettre en œuvre une solution de gestion de contenu ou e-commerce
 
-Alternately, clone the repository and manually invoke `composer` using the shipped
-`composer.phar`:
+##Pour les concepteurs développeurs informatiques :
 
-    cd my/project/dir
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git
-    cd ZendSkeletonApplication
-    php composer.phar self-update
-    php composer.phar install
+* Développer des composants d'interface (au moins 2 compétences parmi les suivantes)
+* Développer des pages web en lien avec une base de données
+* Développer une interface utilisateur
+* Maquetter une application
+* Développer des composants d'accès aux données
+* Développer la persistance des données (anglais + 1 des autres compétences suivantes)
+* Utiliser l’anglais dans son activité professionnelle en informatique
+* Développer des composants dans le langage d’une base de données
+* Mettre en place une base de données
+* Concevoir une base de données
+* Développer une application n-tiers (au moins 3 compétences parmi les suivantes)
+* Préparer et exécuter le déploiement d’une application
+* Préparer et exécuter les plans de tests d’une application
+* Développer une application de mobilité numérique
+* Construire une application organisée en couches
+* Collaborer à la gestion d’un projet informatique
+* Développer des composants métier
+* Concevoir une application
+** Pour les CDI, l’utilisation d’un Framework Web est fortement encouragée. **
 
-(The `self-update` directive is to ensure you have an up-to-date `composer.phar`
-available.)
+##Cahier des charges
+Le site d’offres d’emploi doit contenir à minima les pages suivantes :
 
-Another alternative for downloading the project is to grab it via `curl`, and
-then pass it to `tar`:
+* Accueil du site
+La page d’index contient la liste des dernières offres d’emploi publiées.
+Chaque offre contient :
+- un titre,
+- le nom d’une société,
+- un lieu,
+- une date de publication,
+- un type (CDI, CDD, Stage ou Freelance).
 
-    cd my/project/dir
-    curl -#L https://github.com/zendframework/ZendSkeletonApplication/tarball/master | tar xz --strip-components=1
+* Il est possible de cliquer sur une offre d’emploi en afficher le détail.* 
+* Il est possible de cliquer sur un lien pour aller vers le formulaire d’ajout d’une offre d’emploi.*
 
-You would then invoke `composer` to install dependencies per the previous
-example.
+###Optionnel :
+- Une offre d’emploi peut contenir une ou plusieurs catégories (ex : PHP, Java, HTML, CSS…)
+- Formulaire de login
+-Détail d’une offre d’emploi
 
-Using Git submodules
---------------------
-Alternatively, you can install using native git submodules:
+####La page qui affiche le détail d’une offre d’emploi contient :
+- un titre,
+- le nom d’une société,
+- un lieu, 
+- une date de publication, 
+- un type (CDI, CDD, Stage ou Freelance),
 
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git --recursive
+##la description de l’offre d’emploi
+**Cette page contient également le formulaire qui permet de répondre à l’offre d’emploi, ce formulaire contient les champs suivants :**
+* prénom,
+* nom,
+* email,
+* cv à uploader au format Word, PDF ou ODT
+* message de motivation
 
-Web Server Setup
-----------------
+*Lorsque ce formulaire est validé, le postulant est redirigé vers la page d’accueil sur laquelle un message s’affiche indiquant que sa demande a bien été prise en compte.*
 
-### PHP CLI Server
+**La page contient le lien pour revenir à la liste des offres d’emploi ainsi que le lien vers le formulaire d’ajout.**
+###Optionnel :
+**Une offre d’emploi peut contenir une ou plusieurs catégories (ex : PHP, Java, HTML, CSS…)**
 
-The simplest way to get started if you are using PHP 5.4 or above is to start the internal PHP cli-server in the root directory:
+##Formulaire de login
+*Si l’utilisateur est identifié il n’a plus à saisir son prénom, nom et email*
+*Validation de formulaire (champs prenom, nom, email, cv obligatoires, CV de type PDF, Word ou ODT et ne dépassant pas 1Mo, email au format valide)*
 
-    php -S 0.0.0.0:8080 -t public/ public/index.php
+##Formulaire d’ajout d’une annonce
+*Cette page contient un formulaire permettant de saisir une nouvelle annonce qui doit contenir les champs suivants : *
+* un titre,
+* le nom d’une société
+* un lieu
+* un type (CDI, CDD, Stage ou Freelance),
+* une description
 
-This will start the cli-server on port 8080, and bind it to all network
-interfaces.
+*Lorsque ce formulaire est validé, l’employeur est redirigé vers la page d’accueil sur laquelle un message s’affiche indiquant que son annonce a bien été créée.*
 
-**Note: ** The built-in CLI server is *for development only*.
+###Optionnel :
+*Permettre à l’employeur de s’identifier, le nom de la société n’est alors plus à saisir.*
+** Permettre l’ajout de catégorie (en JavaScript ?) **
+*Validation de formulaire (les champs titre, société, lieu et type sont obligatoire, au moins une catégorie)*
 
-### Apache Setup
+###Pages optionnelles (obligatoire pour la conception de base de données) :
 
-To setup apache, setup a virtual host to point to the public/ directory of the
-project and you should be ready to go! It should look something like below:
+* Afficher les annonces d’un certain type (rendre le type cliquable sur les autres pages)
+* Afficher les annonces par lieu (rendre les lieux cliquables sur les autres pages)
+* Recherche par mots-clés (un formulaire de recherche par mots-clés, la requête SQL sera sous la forme "SELECT * FROM annonce WHERE titre = '%symfony%' OR description = '%symfony%'")
+* Modifier/supprimer une annonce
+* Inscription d’un employeur
+* Inscription d’un postulant
+* Partie admin, permettant à l’employeur de consulter les réponses à ses offres d’emploi
 
-    <VirtualHost *:80>
-        ServerName zf2-tutorial.localhost
-        DocumentRoot /path/to/zf2-tutorial/public
-        SetEnv APPLICATION_ENV "development"
-        <Directory /path/to/zf2-tutorial/public>
-            DirectoryIndex index.php
-            AllowOverride All
-            Order allow,deny
-            Allow from all
-        </Directory>
-    </VirtualHost>
+##Méthode de travail
+###Maquettage
+Commencer par dessiner les pages sur papier, ou via un logiciel de Mockups et montrer les interactions entres elles.
+###Intégration
+En utilisant du faux-texte, créer le HTML et le CSS (vous pouvez utiliser des frameworks HTML/CSS comme Bootstrap).
+
+###Conception de base de données
+Sur papier ou dans un logiciel de modélisation (ou de diagramme), créer le schéma entité/association de votre base de données (ce schéma peut tenir compte des parties optionnelles même si vous ne souhaitez pas les développer tout de suite).
+Proposer ensuite un schéma physique de votre base de données (vous pouvez utiliser MySQL Workbench ou l’onglet Concepteur de PHPMyAdmin).
+
+###Développement
+*Développer ensuite votre application en PHP ou en Java selon le langage que vous maitrisez.*
+Dans votre développement, utilisez si possible le principe de couches :
+* En séparant le rendu HTML des pages du reste du code (logique applicative)
+* En utilisant le Design Pattern MVC (Model View Controller)
+*Faites si possible apparaitre des composants d’accès aux données (Active Record, Table Gateway, Data Mapper, DAO, etc…)*

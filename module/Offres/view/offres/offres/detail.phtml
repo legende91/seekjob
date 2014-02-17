@@ -46,8 +46,8 @@
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			<strong>Oups !</strong> Votre Un erreur est survenu merci de soumettre à nouveau votre candidature
 		</div>
-		<?php //TODO creer la page de soumission du formulaire  ?>
-		<form role="form" id="postCadidature" method="POST"  action="">
+			<form role="form" id="postCadidature" method="POST"  action="">
+			<?php echo $this->form()->openTag($form); ?>
 			<input type="hidden" name="idUser"  value="<?php echo $userID; ?>"  />
 			<div class="form-group">
 				<label for="nom">Nom</label>
