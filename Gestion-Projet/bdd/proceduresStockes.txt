@@ -1,0 +1,50 @@
+============	OFFRES	============
+	SELECT
+		> Recuperer toutes les offres 
+				CALL select_all_offre()
+		> Recuperer tout le detail d'une offre  
+					CALL select_one_offre(pIdOffre)
+							toutes les offres par societe
+							toutes les offres par candidat
+							toutes les offres par type
+							toutes les offres par tag
+							toutes les offres par lieu
+							toutes les offres par date
+	CREER
+		> Une Offre
+		
+	MODIFIER
+		> Une Offre
+	SUPPRIMER
+		> Une Offre
+
+============	SOCIETE		============	
+	SELECT
+		Recuperer toutes les societes CALL select_all_societe()
+							> tout le detail d'une societe -- CALL select_one_societe( 2 )
+							toutes les societes par tag
+							toutes les societes par lieu
+							toutes les societes par date
+	CREER
+		> Une societe
+		
+	MODIFIER
+		> Une societe
+	SUPPRIMER
+		> Une societe
+============	CANDIDAT	============	
+	SELECT
+		Recuperer toutes les CANDIDAT
+		> Recuperer tout le detail d'un candidat
+							toutes les candidatures par candidat
+							toutes les candidat par tag
+							toutes les candidat par lieu
+							toutes les candidat par date
+	CREER
+		> Un candidat
+		
+	MODIFIER
+		> Un candidat
+	SUPPRIMER
+		> Un candidat
+	

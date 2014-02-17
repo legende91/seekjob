@@ -1,0 +1,31 @@
+PAGES 
+=> Accueil
+	- La page d’index contient la liste des dernières offres d’emploi publiées.
+	
+=> Détail d’une offre d’emploi
+	-	La page qui affiche le détail d’une offre d’emploi contient :
+	- Cette page contient également le formulaire qui permet de répondre à l’offre d’emploi
+
+=> Formulaire d’ajout d’une annonce
+	
+	
+Pages optionnelles (obligatoire pour la conception de base de données) :
+
+	=> Afficher les annonces d’un certain type /!\ CETTE PAGE EST LA PAGE D'ACCUEIL /!\ OU /!\ CETTE PAGE EST APPELLÉ DEPUIS LA PAGE D'ACCUEIL /!\
+	(rendre le type cliquable sur les autres pages)
+	
+	=> Afficher les annonces par lieu /!\ CETTE PAGE EST LA PAGE D'ACCUEIL /!\ OU /!\ CETTE PAGE EST APPELLÉ DEPUIS LA PAGE D'ACCUEIL /!\
+	(rendre les lieux cliquables sur les autres pages)
+	
+	=> Recherche par mots-clés  /!\ CETTE PAGE EST LA PAGE D'ACCUEIL /!\
+		(un formulaire de recherche par mots-clés, 
+		la requête SQL sera sous la forme "SELECT * FROM annonce WHERE titre = '%symfony%' OR description = '%symfony%'")
+	
+	=>Inscription d’un postulant
+	
+MIDDLE OFFICE	
+	=> Modifier/supprimer une annonce
+	=> Inscription d’un employeur
+	=> Partie admin, permettant à l’employeur de consulter les réponses à ses offres d’emploi
+	
+	

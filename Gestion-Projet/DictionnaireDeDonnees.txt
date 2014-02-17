@@ -1,0 +1,53 @@
+BDD Dictionnaire des données
+
+=> Membre 
+	id
+	type (societe|user)
+	nom 
+	prenom
+	age
+	cv
+	lettreDeMotivation
+	tel
+	numero
+	rue
+	ville
+	cp
+	pays
+	
+	
+=>Offre
+	id
+	titre
+	description
+	cp
+	pays
+	date
+	
+	idtabComptencesRequise
+	
+=> tabComptencesRequise
+		id
+		id_offre
+		idCategorie_Offre
+	
+=> Categorie_Offre
+		idCategorie_Offre
+		titre (html, php)
+
+
+
+offre AidtabComptencesRequise
+ = 1
+
+
+1 tabComptencesRequise
+	idCategorie_Offre
+	idCategorie_Offre
+	idCategorie_Offre
+
+2 tabComptencesRequise
+	idCategorie_Offre
+	idCategorie_Offre
+	idCategorie_Offre
+

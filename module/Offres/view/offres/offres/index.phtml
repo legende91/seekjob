@@ -1,0 +1,62 @@
+<br />
+<div class="clearfix">
+	<div class="col-lg-6 pull-left">
+		<p class=""><strong>Nos derniers offres :</strong></hp>
+	</div><!-- /.col-lg-6 -->
+	<div class="col-lg-6 pull-right">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="recherche par mot clés">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button">chercher!</button>
+			</span>
+		</div><!-- /input-group -->
+	</div><!-- /.col-lg-6 -->
+</div>
+<hr />
+
+<?php
+/** var Offre $offre 
+ * 
+ */
+?>
+<?php foreach ($allOffres as $offre) : ?>
+	<?php //var_dump($offre); ?>
+	<!--offre exemple-->
+	<div class="panel panel-default offre">
+		<div class="panel-heading clearfix">
+			<h3 class="panel-title"><span class="pull-left">
+					<a href="http://seekjobs.dev/offres/detail/<?php echo $offre->getId(); ?>"><?php echo $offre->getTitre(); ?></a></span> 
+				<strong class="pull-right"><a href="#"><?php echo $offre->getType(); ?></a></strong></h3></div>
+		<div class="panel-body">
+			<p class="clearfix">
+				<span class="pull-left">
+					<strong><a href="#"><?php echo $offre->getDenomination(); ?></a></strong> à <?php echo $offre->getVille(); ?></span>  
+					<span class="pull-right">Offre publié <?php echo $offre->getDate_creation(); ?> <button type="button" class="btn btn-link"> <span class="glyphicon glyphicon-thumbs-up"></span> POSTULER </button></span>
+			</p>
+			<p>
+				<?php //TODO cahnger la couleur des liens car la c'est affreux ' ?>
+				<?php foreach ($offre->getTabCompetences() as $tag) : ?>
+					<span class="badge pad"><a href="../offres/searchBy/tag/<?php echo $tag->getId(); ?>"><?php echo $tag->getTitre(); ?></a></span>
+				<?php endforeach; ?>
+			</p>
+		</div>
+	</div>
+	<!--offre exemple-->
+
+<?php endforeach; ?>
+
+<hr />
+<!--PAGINATION--> 
+<div class="text-center"> 
+	<ul class="pagination">
+		<li class="disabled"><a href="#">&laquo;</a></li>
+		<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">6</a></li>
+		<li><a href="#">7</a></li>
+		<li><a href="#">8</a></li>
+	</ul>
+</div>
