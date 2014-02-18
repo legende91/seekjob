@@ -59,9 +59,9 @@ Chaque offre contient :
 ###Optionnel :
 - Une offre d’emploi peut contenir une ou plusieurs catégories (ex : PHP, Java, HTML, CSS…)
 - Formulaire de login
--Détail d’une offre d’emploi
 
-####La page qui affiche le détail d’une offre d’emploi contient :
+##Détail d’une offre d’emploi
+**La page qui affiche le détail d’une offre d’emploi contient :**
 - un titre,
 - le nom d’une société,
 - un lieu, 
