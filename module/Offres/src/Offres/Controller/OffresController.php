@@ -53,7 +53,7 @@ class OffresController extends AbstractActionController {
 		$offreDetail = $g->selectOffreById($id);
 //		var_dump($offreDetail);
 //		die();
-		return new ViewModel(array('offre' => $offreDetail, 'userID' => 1,'form' => $form));
+		return new ViewModel(array('offre' => $offreDetail, 'userID' => 1));
 	}
 
 	//TODO Creer formulaire d'inscription
